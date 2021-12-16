@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calendar Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>Attendence Sheet</h2>
+<div id="navigation">
+	<span id="week1" onclick="showWeek1()">Week 1</span>
+	<span id="week2" onclick="showWeek2()">Week 2</span>
+	<span id="week3" onclick="showWeek3()">Week 3</span>
+	<span id="week4" onclick="showWeek4()">Week 4</span>
+</div>
+<table border="1" cellpadding="5" id="tablesectionOne">
+	<tr>
+		<th colspan="8" class="CAPTION">Week 1</th>
+	</tr>
+	<tr>
+		<th></th>
+		<th>Mon</th>
+		<th>Tue</th>
+		<th>Web</th>
+		<th>Thu</th>
+		<th>Fri</th>
+		<th>Sat</th>
+		<th>Total</th>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td></td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td></td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td></td>
+		<td>5</td>
+	</tr>
+</table>
+
+
+<table border="1" cellpadding="5" id="tablesectionTwo">
+	<tr>
+		<th colspan="8" class="CAPTION">Week 2</th>
+	</tr>
+	<tr>
+		<th></th>
+		<th>Mon</th>
+		<th>Tue</th>
+		<th>Web</th>
+		<th>Thu</th>
+		<th>Fri</th>
+		<th>Sat</th>
+		<th>Total</th>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td></td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td></td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td></td>
+		<td>5</td>
+	</tr>
+</table>
+
+
+<table border="1" cellpadding="5" id="tablesectionThree">
+	<tr>
+		<th colspan="8" class="CAPTION">Week 3</th>
+	</tr>
+	<tr>
+		<th></th>
+		<th>Mon</th>
+		<th>Tue</th>
+		<th>Web</th>
+		<th>Thu</th>
+		<th>Fri</th>
+		<th>Sat</th>
+		<th>Total</th>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td></td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td></td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td></td>
+		<td>5</td>
+	</tr>
+</table>
+
+
+<table border="1" cellpadding="5" id="tablesectionFour">
+	<tr>
+		<th colspan="8" class="CAPTION">Week 4</th>
+	</tr>
+	<tr>
+		<th></th>
+		<th>Mon</th>
+		<th>Tue</th>
+		<th>Web</th>
+		<th>Thu</th>
+		<th>Fri</th>
+		<th>Sat</th>
+		<th>Total</th>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td></td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td>P</td>
+		<td>P</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<th>John</th>
+		<td>P</td>
+		<td></td>
+		<td>P</td>
+		<td></td>
+		<td>P</td>
+		<td></td>
+		<td>3</td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+	function showWeek1() {
+		week1 = document.getElementById('tablesectionOne')
+		week2 = document.getElementById('tablesectionTwo')
+		week3 = document.getElementById('tablesectionThree')
+		week4 = document.getElementById('tablesectionFour')
+
+		week1.style.display = 'block'
+		week2.style.display = 'none'
+		week3.style.display = 'none'
+		week4.style.display = 'none'
+	}
+
+	function showWeek2() {
+		week1 = document.getElementById('tablesectionOne')
+		week2 = document.getElementById('tablesectionTwo')
+		week3 = document.getElementById('tablesectionThree')
+		week4 = document.getElementById('tablesectionFour')
+
+		week1.style.display = 'none'
+		week2.style.display = 'block'
+		week3.style.display = 'none'
+		week4.style.display = 'none'
+	}
+
+	function showWeek3() {
+		week1 = document.getElementById('tablesectionOne')
+		week2 = document.getElementById('tablesectionTwo')
+		week3 = document.getElementById('tablesectionThree')
+		week4 = document.getElementById('tablesectionFour')
+
+		week1.style.display = 'none'
+		week2.style.display = 'none'
+		week3.style.display = 'block'
+		week4.style.display = 'none'
+	}
+
+	function showWeek4() {
+		week1 = document.getElementById('tablesectionOne')
+		week2 = document.getElementById('tablesectionTwo')
+		week3 = document.getElementById('tablesectionThree')
+		week4 = document.getElementById('tablesectionFour')
+
+		week1.style.display = 'none'
+		week2.style.display = 'none'
+		week3.style.display = 'none'
+		week4.style.display = 'block'
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.container{
+    width: 100%;
+}
+
+.header{
+    margin: 0px;
+    padding: 0px;
+}
+
+.banner{
+    width: 100%;
+}
+
+.menu{
+    width: 100%;
+    background-color: #5b94f0;
+}
+
+.menu ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu ul li{
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+.menu ul li:hover{
+    background-color: #79a5ed;
+}
+
+.main{
+    display: flex;
+}
+
+.main-content{
+    padding: 5px;
+    padding-left: 20px;
+    width: 60%;
+}
+
+.menu-right{
+    padding: 5px;
+    width: 40%;
+}
+
+.main-content-main{
+    display: flex;
+}
+
+.main-content-main-left{
+    flex: auto;
+}
+
+.main-content-main-right{
+    flex: auto;
+}
+
+p{
+    text-transform: capitalize;
+    color: #84d1f5;
+}

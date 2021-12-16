@@ -1,0 +1,131 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.container{
+    width: 100%;
+}
+
+.header{
+    width: 100%;
+}
+
+.banner{
+    background: url(https://github.com/hoainam-99/HTML-homework-2207-2210/blob/master/bt2210/assets/img/excel-logo.png?raw=true);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 100%;
+}
+
+.menu{
+    width: 100%;
+    background-color: #e0584f;
+}
+
+.menu ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu ul li{
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+.menu ul li:hover{
+    background-color: #f07971;
+}
+
+.main{
+    display: flex;
+}
+
+.main-content{
+	width: 66.67%;
+	padding: 5px;
+}
+
+.main-content h2{
+    margin: 30px auto 30px 30px;
+    color: rgb(63, 60, 60)
+}
+
+.main-content-main{
+    display: flex;
+    margin: 54px 0;
+}
+
+.main-content-anh{
+    flex: 1;
+    background-color: rgb(75, 196, 156);
+    height: 176px;
+    margin: 0 30px;
+}
+
+.main-content-anh h2{
+    background-color: #000;
+    color: white;
+    margin: 16px 260px 16px 16px;
+}
+
+.main-content-anh p{
+    background-color: #000;
+    color: white;
+    margin: 16px 260px 16px 16px;
+}
+
+.main-content-tt{
+    flex: 1;
+    margin: 0 30px;
+}
+.main-content-tt h4{
+    margin-bottom: 55px;
+}
+
+.main-content-tt p{
+    margin: 30px 0;
+}
+
+.main-content-tt a{
+    color: red;
+    text-decoration: none;
+}
+
+.menu-right{
+    width: 33.33%;
+	padding: 5px;
+}
+
+.menu-right-main{
+    display: flex;
+    margin: 20px 0;
+}
+
+.menu-right-anh{
+    flex: 1;
+    width: 30%;
+}
+
+.menu-right-anh div{
+    flex: 1;
+    width: 80%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: small;
+}
+
+.menu-right-tt{
+    flex: 2;
+    width: 70%;
+    padding: 4px;
+    text-align: left;
+    font-size: large;
+}
