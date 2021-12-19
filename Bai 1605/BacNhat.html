@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bậc nhất</title>
+</head>
+<body>
+    <script>
+        a = prompt(`Nhập a`)
+        b = prompt(`Nhập b`)
+
+        a = parseInt(a);
+        b = parseInt(b);
+
+        if(a==0){
+            if(b==0){
+                document.write(`Phương trình vô số No`)
+            }else{
+                document.write(`Phương trình vô No`)
+            }
+        }else{
+            document.write(`x = ` + -(b/a))
+        }
+    </script>
+</body>
+</html>

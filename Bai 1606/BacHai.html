@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bậc Hai</title>
+</head>
+<body>
+<script>
+    a = prompt(`Nhập a`)
+    b = prompt(`Nhập b`)
+    c = prompt(`Nhập c`)
+
+    a = parseInt(a);
+    b = parseInt(b);
+    c = parseInt(c);
+
+    if(a==0){
+        if(b==0){
+            if(c==0){
+                document.write(`Phương trình vô số No`)
+            }else{
+                document.write(`Phương trình vô No`)
+            }
+        }else{
+            document.write(`x = ` + (-c/b))
+        }
+    }else{
+        delta = b*b - 4*a*c
+        if(delta > 0){
+            x1 = (-b + Math.sqrt(delta)) / (2*a)
+            x2 = (-b - Math.sqrt(delta)) / (2*a)
+            document.write(`x1 = ` + x1)
+            document.write(`<br>`)
+            document.write(`x2 = ` + x2)
+        }else if(delta < 0){
+            document.write(`Phương trình vô No`)
+        }else{
+            document.write(`x = ` + (-b/2*a))
+        }
+    }
+</script>
+</body>
+</html>
