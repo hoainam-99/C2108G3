@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 700px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container{
+            margin-top: 30px;
+        }
+
+        .table__stt,
+        .table__age{
+            padding: 8px 16px;
+        }
+
+        .table__name,
+        .table__pwd{
+            padding: 8px 75px;
+        }
+
+        .table__email{
+            padding: 8px 120px;
+        }
+
+        .container td{
+            padding: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th class="table_stt">STT</th>
+                    <th class="table_name">Họ và tên</th>
+                    <th class="table_age">Tuổi</th>
+                    <th class="table_email">Gmail</th>
+                </tr>
+            </thead>
+            <tbody id="result">
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var tkList = []
+
+    var result = document.getElementById('result')
+
+    function openLocalStorage(){
+        var json = localStorage.getItem('tkList')
+        if (json != null && json != ''){
+            tkList = JSON.parse(json)
+        }
+    }
+
+    openLocalStorage()
+    console.log(tkList)
+
+    for(i = 0; i < tkList.length; i++){
+        result.innerHTML += 
+        `<tr>
+            <td>${i+1}</td>
+            <td>${tkList[i].name}</td>
+            <td>${tkList[i].age}</td>
+            <td>${tkList[i].email}</td>
+        </tr>`
+    }
+</script>
+</html>

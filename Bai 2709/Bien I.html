@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sắp xếp mảng</title>
+</head>
+<body>
+    <script>
+        n = prompt('Nhập n = ')
+        var t = []
+
+        for(i=0; i<n; i++){
+            t.push(prompt(`Nhập phần tử thứ ${i+1}`))
+        }
+
+        function Sapxep(z){
+            for(i=0; i< z.length; i++){
+                for(y=i+1; y< z.length; y++){
+                    if(z[i] < z[y]){
+                        var TG = z[i]
+                        z[i] = z[y]
+                        z[y] = TG
+                    }
+                }
+            }
+            return z
+        }
+
+        function Tong(z){
+            var tong 
+            tong = 0
+            for(i=0; i < z.length; i++){
+                tong +=+ z[i]
+            }
+            return tong
+        }
+
+        console.log(t)
+        console.log(Tong(t))
+        alert(`
+        Các phần tử: {${Sapxep(t)}}
+        Tổng = {${Tong(t)}}
+        `)
+
+    </script>
+</body>
+</html>

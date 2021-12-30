@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phương trình Bậc 1</title>
+    <style>
+        .main{
+            border: solid 1px #0d8ed4;
+        }
+
+        h3{
+            background-color: #0d8ed4;
+            color: white;
+            padding: 8px 16px;
+            margin: 0 auto;
+        }
+
+        .content{
+            padding: 10px;
+        }
+
+        .content button{
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin: auto 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h3>Giải phương trình bậc 1</h3>
+        <div class="content">
+            <button onclick="nhapA()">Nhập giá trị A</button>
+            <button onclick="nhapB()">Nhập giá trị B</button>
+            <button onclick="ketqua()">In ra kết quả</button>
+        </div>
+    </div>
+
+<script>
+    function nhapA(){
+        a = parseInt(prompt('Nhập A = '))
+        return a
+    }
+    function nhapB(){
+        b = parseInt(prompt('Nhập B = '))
+        return b
+    }
+    function ketqua(){
+        var tong = a + b
+        alert(`Kết quả của ${a} + ${b} = ` + tong)
+    }
+</script>
+</body>
+</html>

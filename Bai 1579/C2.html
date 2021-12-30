@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <title>Calculator Online</title>
+    <style>
+        table {
+            margin: auto;
+            margin-top: 50px;
+            background: #BBBBBB;
+        }
+
+        .pheptinh {
+            background: orange;
+        }
+
+        #c {
+            width: 100px;
+            height: 40px;
+        }
+
+        .btn {
+            width: 50px;
+            height: 40px;
+        }
+
+        .calcu {
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td colspan="4">
+                <input class="calcu" id="calcu" type="text" value="" readonly="true">
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" class="btn" value="AC" onclick="pressKey('AC')"></td>
+            <td><input type="button" class="btn" value="+/-"></td>
+            <td><input type="button" class="btn" value="%" onclick="pressKey('%')"></td>
+            <td><input type="button" class="btn pheptinh" value="/" onclick="pressKey('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="btn" value="7" onclick="pressKey('7')"></td>
+            <td><input type="button" class="btn" value="8" onclick="pressKey('8')"></td>
+            <td><input type="button" class="btn" value="9" onclick="pressKey('9')"></td>
+            <td><input type="button" class="btn pheptinh" value="*" onclick="pressKey('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="btn" value="4" onclick="pressKey('4')"></td>
+            <td><input type="button" class="btn" value="5" onclick="pressKey('5')"></td>
+            <td><input type="button" class="btn" value="6" onclick="pressKey('6')"></td>
+            <td><input type="button" class="btn pheptinh" value="-" onclick="pressKey('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="btn" value="1" onclick="pressKey('1')"></td>
+            <td><input type="button" class="btn" value="2" onclick="pressKey('2')"></td>
+            <td><input type="button" class="btn" value="3" onclick="pressKey('3')"></td>
+            <td><input type="button" class="btn pheptinh" value="+" onclick="pressKey('+')"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" class="btn" id="c" value="0" onclick="pressKey('0')"></td>
+            <td><input type="button" class="btn" value="." onclick="pressKey('.')"></td>
+            <td><input type="submit" class="btn pheptinh" value="=" onclick="pressKey('=')"></td>
+        </tr>
+    </table>
+
+<script type="text/javascript">
+    //x + y, x - y, x / y, x * y, x % y
+    //cal -> chua dc thiet lap -> nhap gia tri cho x, cal da thiet lap -> nhap gia tri cho y
+    var x = ''
+    var y = ''
+    var cal = ''
+
+    function pressKey(key) {
+        switch(key) {
+            case '+':
+            case '-':
+            case '*':
+            case '/':
+            case '%':
+                cal = key;
+            break;
+            case 'AC':
+                x = ''
+                y = ''
+                cal = ''
+            break;
+            case '=':
+                return calculator()
+            break;
+            default:
+                if(cal == '') {
+                    if(key == '.' && x.includes('.')) {
+                    } else {
+                        x += key
+                    }
+                } else {
+                    if(key == '.' && y.includes('.')) {
+                    } else {
+                        y += key
+                    }
+                }
+            break;
+        }
+
+        var output = document.getElementById('calcu')
+        output.value = `${x} ${cal} ${y}`
+    }
+
+    function calculator() {
+        if(x == '' || y == '' || cal == '') {
+            return;
+        }
+
+        var result = ''
+        switch(cal) {
+            case '+':
+                result = parseFloat(x) + parseFloat(y)
+            break;
+            case '-':
+                result = parseFloat(x) - parseFloat(y)
+            break;
+            case '*':
+                result = parseFloat(x) * parseFloat(y)
+            break;
+            case '/':
+                result = parseFloat(x) / parseFloat(y)
+            break;
+            case '%':
+                result = parseFloat(x) % parseFloat(y)
+            break;
+        }
+
+        var output = document.getElementById('calcu')
+        output.value = `${x} ${cal} ${y} = ${result}`
+
+        x = y = cal = ''
+    }
+</script>
+</body>
+</html>

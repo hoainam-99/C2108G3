@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="container">
+    <form method="post" onsubmit="return saveRegister();">
+        <label>Full Name: </label>
+        <input required type="text" name="fullname" id="fullname_id" placeholder="Enter full name">
+        <label>Age: </label>
+        <input required type="number" name="age" id="age_id" placeholder="Enter age">
+        <label>Email: </label>
+        <input required type="email" name="email" id="email_id" placeholder="Enter email">
+        <label>Password: </label>
+        <input required type="password" name="pwd" id="pwd_id" placeholder="Enter Password">
+        <label>Confirm Password: </label>
+        <input required type="password" name="confirmpwd" id="confirm_pwd_id" placeholder="Enter Password">
+        <button type="submit">Register</button>
+        <button type="reset">Reset</button>
+    </form>
+</div>
+    
+<script type="text/javascript" src="./script.js"></script>
+</body>
+</html>

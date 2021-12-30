@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sinh viên</title>
+    <style>
+        .container button{
+            padding: 10px;
+            background-color: green;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .container th{
+            width: 150px;
+            height: 35px;
+            font-size: 24px;
+            color: rgb(73, 73, 73);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="showStd()">Thêm 20 sinh viên</button>
+        <table border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Ho Ten</th>
+                    <th>Tuoi</th>
+                    <th>Dia chi</th>
+                </tr>
+            </thead>
+            <tbody id="result_id">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        var studentList = [{
+                "name" : "Đỗ Minh Thành" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Cao Duy Anh" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Nguyễn Ái Nhi" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Phạm Duy Anh" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Phạm Vân Anh" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Phạm Quang Dũng" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Nguyễn Hoài Nam" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Nguyễn Tùng Lâm" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Nguyễn Văn Hoàng" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Nguyễn Như Quỳnh" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Đinh Hải Quân" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Công Phương Ngọc" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Trần Thanh Nhàn" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Công Thủy Tiên" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Lê Minh Hùng" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Hoàng Thùy Linh" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Nguyễn Thùy Nhung" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Nguyễn Đức Tài" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Đỗ Hoàng Long" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            },{
+                "name" : "Trần Trung Dũng" ,
+                "tuoi" : 18 ,
+                "diachi" : "Hà Nội" ,
+            }]
+            console.log(studentList)
+
+        function showStd(){
+            var result = document.getElementById('result_id')
+            for (var i = 0; i < studentList.length; i++){
+                var std = studentList[i]
+                result.innerHTML += `
+                <tr>
+                    <td>${i+1}</td>
+                    <td>${std.name}</td>
+                    <td>${std.tuoi}</td>
+                    <td>${std.diachi}</td>
+                </tr>`
+            }
+        }
+    </script>
+</body>
+</html>

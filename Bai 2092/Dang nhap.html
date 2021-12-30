@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng nhập hệ thống</h2>
+        <div class="dang_nhap">
+            <div class="anh_dang_nhap">
+                <img src="../Bai 2092/img/BWS_Set12/login.png">
+            </div>
+            <form method="post" onsubmit="return showThongBao()">
+                <div class="thong_tin">
+                    <label>Tài khoản: </label>
+                    <input type="text" required placeholder="Nhập tài khoản" id="tk_id">
+                </div>
+                <div class="thong_tin">
+                    <label>Mật khẩu: </label>
+                    <input type="password" required placeholder="Nhập mật khẩu" id="mk_id">
+                </div>
+                <div class="thong_tin_nut">
+                    <button class="btn" type="submit">Đăng nhập</button>
+                    <button class="btn" type="reset">Nhập lại</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="ThongBao hide">
+        <div class="ThongBao_success">
+            <div class="ThongBao_thong_tin">
+                <p>Đăng nhập thành công</p>
+            </div>
+            <div class="ThongBao_nut">
+                    <button class="ok_btn" onclick="hideThongBao()">Ok</button>
+            </div>
+        </div>
+    </div>
+</body>
+<scrip src="./app.js"></scrip>
+</html>

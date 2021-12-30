@@ -1,0 +1,99 @@
+body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 500px;
+    background-color: #FFFFCC;
+    margin: 0px auto;
+    padding: 20px;
+}
+
+.container h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0000CC;
+    text-transform: uppercase;
+}
+
+.dang_nhap{
+    display: flex;
+}
+
+.anh_dang_nhap{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thong_tin{
+    display: flex;
+}
+
+.thong_tin label{
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    margin: 8px auto;
+    flex: 1;
+}
+
+.thong_tin input{
+    margin: 8px auto;
+    flex: 2;
+}
+
+.thong_tin_nut{
+    align-items: center;
+}
+
+.btn{
+    border: none;
+    padding: 4px 8px;
+    margin: 10px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    background-color: rgb(193, 200, 206);
+    border-radius: 5px;
+}
+
+.ThongBao{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ThongBao_success{
+    background-color: white;
+    width: 240px;
+}
+
+.ThongBao_thong_tin{
+    text-align: center;
+    height: 80px;
+}
+
+.ThongBao_nut{
+    text-align: right;
+    background-color: aliceblue;
+    height: 60px;
+}
+
+.ThongBao_nut .ok_btn{
+    border: none;
+    padding: 4px 20px;
+    margin: 12px 30px;
+    font-size: 16px;
+    background-color: rgb(193, 200, 206);
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+.hide{
+    display: none;
+}

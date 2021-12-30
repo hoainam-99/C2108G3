@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quan Ly San Pham - Javascript</title>
+
+	<style type="text/css">
+		.container {
+			width: 600px;
+			background-color: #bcf7f3;
+			margin: 0px auto;
+			padding: 15px;
+			margin-bottom: 20px;
+		}
+
+		.container label, .container input, .container select {
+			width: 95%;
+			margin-bottom: 15px;
+			font-size: 18px;
+		}
+
+		.container button {
+			font-size: 18px;
+		}
+
+		.btn-success {
+			background-color: #5ef7ab;
+			border: none;
+			color: black;
+			padding: 6px;
+			cursor: pointer;
+		}
+
+		.btn-warning {
+			background-color: orange;
+			border: none;
+			color: black;
+			padding: 6px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<form method="post" onsubmit="return saveProduct();">
+		<label>Product Name: </label>
+		<input required type="text" name="product_name" id="product_id">
+		<label>Manufacturer Name: </label>
+		<select required id="manufacturer_id" name="manufacturer_name" onchange="changeManufacturer()">
+			<option value="">-- Chon --</option>
+			<!-- <option value="">-- Chon --</option>
+			<option value="Apple">Apple</option>
+			<option value="Samsung">Samsung</option>
+			<option value="LG">LG</option>
+			<option value="Sony">Sony</option>
+			<option value="Google">Google</option> -->
+		</select>
+		<label>Category Name: </label>
+		<select required name="category_name" id="category_id">
+			<option value="">-- Chon --</option>
+		</select>
+		<label>Price: </label>
+		<input required type="number" name="price_name" id="price_id" onkeyup="calTotalPrice()">
+		<label>Quanlity: </label>
+		<input required type="number" name="quanlity_name" id="quanlity_id" onkeyup="calTotalPrice()">
+		<label>Total Price: </label>
+		<input required type="number" name="total_price_name" id="total_price_id" disabled>
+		<button type="submit" class="btn-success">Save Product</button>
+		<button type="reset" class="btn-warning">Reset</button>
+	</form>
+</div>
+<div class="container">
+	<table border="1" cellpadding="5" style="width: 100%;">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Product Name</th>
+				<th>Manufacturer Name</th>
+				<th>Category Name</th>
+				<th>Price</th>
+				<th>Quanlity</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody id="result"></tbody>
+	</table>
+</div>
+
+<script type="text/javascript">
+	var configData = [
+		{
+			"name": "Apple",
+			"categoryList": ["IPhone", "IPad", "IPod"]
+		}, {
+			"name": "Samsung",
+			"categoryList": ["S1", "S2", "S3", "S4", "S5"]
+		}, {
+			"name": "LG",
+			"categoryList": ["LG01", "LG02", "LG03", "LG04"]
+		}, {
+			"name": "Sony",
+			"categoryList": ["S1", "S2"]
+		}, {
+			"name": "Google",
+			"categoryList": ["G1", "G2", "G3", "G4", "G5", "G6"]
+		}
+	]
+
+	var productList = []
+
+	//mapping
+	var productTag = document.getElementById('product_id')
+	var priceTag = document.getElementById('price_id')
+	var quanlityTag = document.getElementById('quanlity_id')
+	var totalPriceTag = document.getElementById('total_price_id')
+	var manufacturerTag = document.getElementById('manufacturer_id')
+	var categoryTag = document.getElementById('category_id')
+	var manufacturerTag = document.getElementById('manufacturer_id')
+	var result = document.getElementById('result')
+
+	// Do du lieu tu configData -> select Manufacturer
+	for(var item of configData) {
+		manufacturerTag.innerHTML += `<option value="${item.name}">${item.name}</option>`
+	}
+
+	function changeManufacturer() {
+		var value = manufacturerTag.value
+		// var categoryTag = document.getElementById('category_id')
+		categoryTag.innerHTML = '<option value="">-- Chon --</option>'
+
+		var categoryList = []
+
+		for(var item of configData) {
+			if(value == item.name) {
+				categoryList = item.categoryList
+				break
+			}
+		}
+
+		for(var v of categoryList) {
+			categoryTag.innerHTML += `<option value="${v}">${v}</option>`
+		}
+	}
+
+	function calTotalPrice() {
+		// var priceTag = document.getElementById('price_id')
+		// var quanlityTag = document.getElementById('quanlity_id')
+
+		var total = priceTag.value * quanlityTag.value
+
+		// var totalPriceTag = document.getElementById('total_price_id')
+		totalPriceTag.value = total
+	}
+
+	function saveProduct() {
+		var product = {
+			"productName": productTag.value,
+			"manufacturerName": manufacturerTag.value,
+			"categoryName": categoryTag.value,
+			"price": priceTag.value,
+			"quanlity": quanlityTag.value,
+			"total": totalPriceTag.value
+		}
+
+		if(currentIndex >= 0) {
+			productList[currentIndex] = product
+			currentIndex = -1
+		} else {
+			productList.push(product)
+		}
+
+		showData()
+
+		saveLocalStorage()
+
+		return false;
+	}
+
+	function showData() {
+		result.innerHTML = ''
+		var index = 0
+		for(var product of productList) {
+			result.innerHTML += `<tr>
+				<td>${index + 1}</td>
+				<td>${product.productName}</td>
+				<td>${product.manufacturerName}</td>
+				<td>${product.categoryName}</td>
+				<td>${product.price}</td>
+				<td>${product.quanlity}</td>
+				<td><button onclick="editProduct(${index})">Edit</button></td>
+				<td><button onclick="removeProduct(${index})">Remove</button></td>
+			</tr>`
+			index++
+		}
+	}
+
+	var currentIndex = -1
+	function editProduct(index) {
+		currentIndex = index
+
+		product = productList[index]
+
+		productTag.value = product.productName
+		manufacturerTag.value = product.manufacturerName
+		changeManufacturer()
+
+		categoryTag.value = product.categoryName
+		priceTag.value = product.price
+		quanlityTag.value = product.quanlity
+		totalPriceTag.value = priceTag.value * quanlityTag.value
+	}
+
+	function removeProduct(index) {
+		var option = confirm("Are you sure to remove the product?")
+		if(!option) return
+
+		productList.splice(index, 1)
+		showData()
+
+		saveLocalStorage()
+	}
+
+	function saveLocalStorage() {
+		//productList -> localStorage
+		//B1. Chuyen productList array -> json string
+		var json = JSON.stringify(productList)
+
+		//B2. Luu
+		localStorage.setItem('productList', json)
+	}
+
+	//lay du lieu tu localStorage
+	var json = localStorage.getItem('productList')
+	if(json != null && json != '') {
+		productList = JSON.parse(json)
+
+		showData()
+	}
+</script>
+</body>
+</html>

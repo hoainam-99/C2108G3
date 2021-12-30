@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruThuongTichTong</title>
+</head>
+<body>
+    <script>
+        var a = parseInt(prompt('Nhập a'))
+        var b = parseInt(prompt('Nhập b'))
+
+        function Tong(a,b) {
+            return a + b
+        }
+
+        function Hieu(a,b) {
+            return a - b
+        }
+
+        function Tich(a,b) {
+            return a * b
+        }
+
+        function Thuong(a,b) {
+            return a / b
+        }
+
+        document.write('a + b = ' + Tong(a,b))
+        document.write('<br>')
+        document.write('a - b = ' + Hieu(a,b))
+        document.write('<br>')
+        document.write('a * b = ' + Tich(a,b))
+        document.write('<br>')
+        document.write('a / b = ' + Thuong(a,b))
+
+    </script>
+</body>
+</html>
